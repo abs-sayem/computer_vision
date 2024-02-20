@@ -1,1 +1,4 @@
-# computer_vision
+# **Computer Vision**
+* ### **Emotion Detection**
+* ### **Face Detection**
+* ### **Gait Analysis**
