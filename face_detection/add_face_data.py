@@ -30,7 +30,7 @@ video.release()
 cv2.destroyAllWindows()
 
 face_data_array = np.asarray(face_data)
-reshaped_face_data = face_data_array.reshape(100, -1)
+reshaped_face_data = face_data_array.reshape(20, -1)
 
 # pickle names
 if 'name.pkl' not in os.listdir('data/'):
