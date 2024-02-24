@@ -43,8 +43,8 @@ else:
     
 # pickle images
 if 'face_data.pkl' not in os.listdir('data/'):
-    with open('data/face_data.pkl', 'wb') as f: pickle.dump(face_data_array, f)
+    with open('data/face_data.pkl', 'wb') as f: pickle.dump(reshaped_face_data, f)
 else:
     with open('data/face_data.pkl', 'rb') as f: faces = pickle.load(f)
-    faces = np.append(faces, face_data_array, axes=0)
+    faces = np.append(faces, reshaped_face_data, axes=0)
     with open('data/face_data.pkl', 'wb') as f: pickle.dump(faces, f)
