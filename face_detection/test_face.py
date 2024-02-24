@@ -26,7 +26,7 @@ while True:
         cv2.rectangle(frame, (x,y), (x+w, y+h), (0,255,0), 1)
     cv2.imshow("Frame", frame)
     k = cv2.waitKey(1)
-    if k==ord('q') or len(face_data)==20: break
+    if k==ord('q'): break
 video.release()
 cv2.destroyAllWindows()
 
