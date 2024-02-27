@@ -33,18 +33,18 @@ face_data_array = np.asarray(face_data)
 reshaped_face_data = face_data_array.reshape(20, -1)
 
 # pickle names
-if 'name.pkl' not in os.listdir('data/'):
+if f'{name}_name.pkl' not in os.listdir('data/'):
     names = [name]*20
-    with open('data/names.pkl', 'wb') as f: pickle.dump(names, f)
+    with open(f'data/{name}_names.pkl', 'wb') as f: pickle.dump(names, f)
 else:
-    with open('data/names.pkl', 'rb') as f: names = pickle.load(f)
+    with open(f'data/{name}_names.pkl', 'rb') as f: names = pickle.load(f)
     names = names + [name]*20
-    with open('data/names.pkl', 'wb') as f: pickle.dump(names, f)
+    with open(f'data/{name}_names.pkl', 'wb') as f: pickle.dump(names, f)
     
 # pickle images
-if 'face_data.pkl' not in os.listdir('data/'):
-    with open('data/face_data.pkl', 'wb') as f: pickle.dump(reshaped_face_data, f)
+if f'{name}_face_data.pkl' not in os.listdir('data/'):
+    with open(f'data/{name}_face_data.pkl', 'wb') as f: pickle.dump(reshaped_face_data, f)
 else:
-    with open('data/face_data.pkl', 'rb') as f: faces = pickle.load(f)
-    faces = np.append(faces, reshaped_face_data, axes=0)
-    with open('data/face_data.pkl', 'wb') as f: pickle.dump(faces, f)
+    with open(f'data/{name}_face_data.pkl', 'rb') as f: faces = pickle.load(f)
+    faces = np.append(faces, reshaped_face_data, axis=0)
+    with open(f'data/{name}_face_data.pkl', 'wb') as f: pickle.dump(faces, f)
